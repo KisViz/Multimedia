@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <canvas id="vaszon" width="600" height="600"></canvas>
+    <script>
+        let canvas = document.getElementById("vaszon"); //letrehozzuk a vasznat
+        let c = canvas.getContext("2d");
+        console.log(c);
+
+        c.fillStyle = "cyan"; //kiszinezzuk a vasznat
+        c.fillRect(0, 0, 600, 600);
+
+        c.fillStyle = "#ffcc00"; //letrehozzuk a dombokat
+        c.beginPath();
+        c.arc(50,550,150,0,2*Math.PI);
+        c.fill();
+        c.beginPath();
+        c.arc(300,750,300,0,2*Math.PI);
+        c.fill();
+        c.beginPath();
+        c.arc(600,600,150,0,2*Math.PI);
+        c.fill();
+
+        let worm = new Image(); //lerajzoljuk a kukacot
+        worm.onload = function(){
+            c.drawImage(worm, 0, 0, 300, 338, 200, 400, 60, 66);
+        }
+        worm.src = "worm.png";
+
+        let plane = new Image(); //repulo megrajzolasa
+        plane.onload = function(){
+            c.drawImage(plane, 0, 0, 600, 200, 50, 50, 120, 40);
+        }
+        plane.src = "plane.png";
+
+        c.fillStyle = "gray" //bombak megrajzolasa
+        for (let i = 0; i < 10; i++) {
+            c.beginPath();
+            c.fillRect(130 + i * 40, 100 + i * 20, 20, 20); //negyzet
+            c.fill();
+            c.beginPath();
+            c.arc(130 + i * 40 + 10, 100 + i * 20 + 20, 10, 0 , Math.PI); //felkor
+            c.fill();
+        }
+    </script>
+</body>
+</html>
