@@ -1,0 +1,9 @@
+#gamearea {
+    width: 600px;
+    height: 600px;
+    border: 2px lightslategray solid;
+    margin: 0 auto;
+    position: relative;
+    background-image: url('bg.jpeg');
+}
+
