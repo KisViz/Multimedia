@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legyen Ön is Milliomos!</title>
+    <link rel="stylesheet" href="../css/game.css">
+</head>
+<body>
+<div id="game-screen" class="screen">
+    <div id="game-container">
+        <div id="background"></div>
+        <div id="money-ladder"></div>
+        <div id="question-box">
+            <div id="question-text"></div>
+            <div id="answers">
+                <button class="answer-btn" data-option="A"></button>
+                <button class="answer-btn" data-option="B"></button>
+                <button class="answer-btn" data-option="C"></button>
+                <button class="answer-btn" data-option="D"></button>
+            </div>
+        </div>
+        <div id="timer"></div>
+        <div id="controls">
+            <button id="fifty-fifty">50/50</button>
+            <button id="phone-a-friend">Telefonos segítség</button>
+        </div>
+        <div id="settings">
+            <button id="sound-toggle">Hang ki/be</button>
+        </div>
+        <div id="creator-info">Készítő: [Név] - [Neptun kód]</div>
+    </div>
+</div>
+<audio id="background-music" loop>
+    <source src="../media/milyen_csodas_ez_a_nap.mp3" type="audio/mpeg">
+</audio>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="../func/func.js"></script>
+
+</body>
+</html>
