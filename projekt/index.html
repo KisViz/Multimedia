@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jégtörő</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style.css"> <!--oladl css e-->
 </head>
 <body>
 <div class="container" id="main-menu">
     <h1>🧊 Jégtörő</h1>
     <p class="tagline">Törj át a jégen, mielőtt kifutsz az időből!</p>
 
-    <!-- 🎮 Játék indítása link formában -->
-    <a href="game.html" class="start-btn" onclick="saveDifficulty()">🎮 Játék indítása</a>
+    <!--jatek inditasa gomb, game.htmlre visz at, elmenti a nehezseget-->
+    <a href="game.html" class="start-btn" onclick="saveDifficulty()">Játék indítása</a>
 
+    <!--legjobb idok kiiratasa, main.jsben a betoltes-->
     <div class="stats">
         <p>Legjobb idő:</p>
         <p>Könnyű: <span id="easy-best-time">-</span> s / <span id="easy-best-player">-</span></p>
         <p>Nehéz: <span id="hard-best-time">-</span> s / <span id="hard-best-player">-</span></p>
     </div>
 
+    <!--nehezseg valasztas-->
     <div class="options">
         <label for="difficulty">Nehézségi szint:</label>
         <select id="difficulty">
@@ -28,27 +30,29 @@
         </select>
     </div>
 
-    <button class="help-btn">❓ Súgó</button>
+    <!--sugo, mukodes a main.jsben-->
+    <button class="help-btn">Súgó</button>
 
     <footer>
-        <p>Készítette: Tóth-Vizhuzó Albert Pál</p>
+        <p>Tóth-Vizhuzó Albert Pál - G9V7JU</p>
     </footer>
 </div>
 
 <script src="scripts/main.js"></script>
 
-<!-- Súgó modal -->
+<!--sugo, eredetileg lerejtve csssel (display:none)-->
 <div id="helpModal" class="modal">
     <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <h2>🆘 Súgó</h2>
-        <h3>🎯 Játék célja</h3>
+        <!--bezaro gomb-->
+        <span class="close-button">x</span>
+        <h2>Súgó</h2>
+        <h3>Játék célja:</h3>
         <p>Törj fel minden jégtáblát, mielőtt lejár az idő!</p>
 
-        <h3>🎮 Irányítás</h3>
-        <p>Használd a nyílbillentyűket (⬆️⬇️⬅️➡️) a hajó mozgatásához.</p>
+        <h3>Irányítás:</h3>
+        <p>Használd a nyílbillentyűket a hajó mozgatásához.</p>
 
-        <h3>⏱️ Idő</h3>
+        <h3>Idő:</h3>
         <p>Induláskor 10 másodperced van. Minden jégtábla feltörése után plusz időt kapsz:
         <ul>
             <li>Könnyű módban: +2 másodperc</li>

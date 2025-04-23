@@ -130,7 +130,8 @@ function endGame(won) {
     window.location.href = "index.html";
 }
 
-document.addEventListener('keydown', (e) => {
+document.addEventListener('keyup', (e) => {
+
     switch (e.key) {
         case 'ArrowUp': moveShip(0, -tileSize); break;
         case 'ArrowDown': moveShip(0, tileSize); break;
