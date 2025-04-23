@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    background-color: #eef;
+    font-family: sans-serif;
+}
+
+#gamearea {
+    position: relative;
+    margin: 40px auto;
+    background: #1d6ab8;
+    border: 2px solid #333;
+    overflow: hidden;
+    width: 600px;
+    height: 600px;
+
+}
+
+#ship {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url("../assets/images/icebreaker.png");
+    background-size: cover;
+    top: 0;
+    left: 0;
+    transition: top 0.2s, left 0.2s;
+    z-index: 10;
+}
+
+.ice {
+    position: absolute;
+    background-color: #bde0fe;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #99ccff;
+    box-sizing: border-box;
+    transition: opacity 0.3s;
+}
+
+.water {
+    background-color: #003366;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+}

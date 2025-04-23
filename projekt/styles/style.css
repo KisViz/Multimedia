@@ -1,0 +1,181 @@
+/*!* Margó és padding 0, fekete háttér*!
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+}
+
+!*  Játékterület pont középen legyen.
+    Mivel a top és a left 50%, így a játéktér bal
+    felső sarka pont középen lenne.
+    Ebből vonjuk le a szélesség és magasság felét,
+    így a középpont lesz az oldal közepén.
+ *!
+#gamearea {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -250px;
+    width: 500px;
+    height: 500px;
+    border: solid gray 2px;
+}
+
+!*  Víz beállítása, szín, elhelyezkedés, szegély.
+    z-index: azt állítjuk be, hogy egymáson lévő
+    elemek közül melyik hol legyen. Minél nagyobb,
+    annál előrébb van az elem.
+    Csak akkor működik, ha az elem pozícionált.
+    (position:absolute, position:relative, or position:fixed)
+    Absolute esetén kikerül a megjelenés folyamából, megadhatunk neki
+    különféle elhelyezkedési értékeket, méretet.
+ *!
+.water {
+    background: navy;
+    position: absolute;
+    z-index: 0;
+    border: solid #666 1px;
+}
+
+.ice {
+    background: aliceblue;
+}
+
+#ship {
+    z-index: 1;
+    position: absolute;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(to bottom, #d0f0ff, #a2dff7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.start-btn,
+.help-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    margin: 1rem 0.5rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #0077b6;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.start-btn:hover,
+.help-btn:hover {
+    background-color: #023e8a;
+}
+
+.options {
+    margin: 1rem 0;
+}
+
+.stats {
+    margin-top: 2rem;
+}
+
+.stats p {
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+
+
+
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    color: #333;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+
+

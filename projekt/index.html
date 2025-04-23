@@ -1,46 +1,63 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Legyen Ön is Milliomos!</title>
-  <link rel="stylesheet" href="css/index.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="func/func.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jégtörő</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-<!-- Főoldal -->
-<div id="main-menu" class="screen">
-  <div class="container">
-    <h1>Legyen Ön is Milliomos!</h1>
-    <div class="creator-info">
-      <p>Készítő: <span id="creator-name">Kovács János</span></p>
-      <p>Neptun kód: <span id="neptun-code">ABC123</span></p>
+<div class="container" id="main-menu">
+    <h1>🧊 Jégtörő</h1>
+    <p class="tagline">Törj át a jégen, mielőtt kifutsz az időből!</p>
+
+    <!-- 🎮 Játék indítása link formában -->
+    <a href="game.html" class="start-btn" onclick="saveDifficulty()">🎮 Játék indítása</a>
+
+    <div class="stats">
+        <p>Legjobb idő:</p>
+        <p>Könnyű: <span id="easy-best-time">-</span> s / <span id="easy-best-player">-</span></p>
+        <p>Nehéz: <span id="hard-best-time">-</span> s / <span id="hard-best-player">-</span></p>
     </div>
 
-    <button id="start-game" class="menu-btn">Játék indítása</button>
-    <button id="show-leaderboard" class="menu-btn">Ranglista</button>
-    <button id="settings-btn" class="menu-btn">Beállítások</button>
-
-    <div id="leaderboard-modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Top 10 játékos</h2>
-        <div id="leaderboard-content"></div>
-      </div>
+    <div class="options">
+        <label for="difficulty">Nehézségi szint:</label>
+        <select id="difficulty">
+            <option value="easy">Könnyű</option>
+            <option value="hard">Nehéz</option>
+        </select>
     </div>
-  </div>
+
+    <button class="help-btn">❓ Súgó</button>
+
+    <footer>
+        <p>Készítette: Tóth-Vizhuzó Albert Pál</p>
+    </footer>
 </div>
 
-<!-- Játék képernyő (elrejtve kezdetben) -->
-<div id="game-screen" class="screen hidden">
-  <div id="game-container">
-    <!-- ... (a korábbi játék tartalom változatlan) ... -->
-  </div>
+<script src="scripts/main.js"></script>
+
+<!-- Súgó modal -->
+<div id="helpModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>🆘 Súgó</h2>
+        <h3>🎯 Játék célja</h3>
+        <p>Törj fel minden jégtáblát, mielőtt lejár az idő!</p>
+
+        <h3>🎮 Irányítás</h3>
+        <p>Használd a nyílbillentyűket (⬆️⬇️⬅️➡️) a hajó mozgatásához.</p>
+
+        <h3>⏱️ Idő</h3>
+        <p>Induláskor 10 másodperced van. Minden jégtábla feltörése után plusz időt kapsz:
+        <ul>
+            <li>Könnyű módban: +2 másodperc</li>
+            <li>Nehéz módban: +1 másodperc</li>
+        </ul>
+        </p>
+    </div>
 </div>
 
-<audio id="background-music" loop>
-  <source src="media/milyen_csodas_ez_a_nap.mp3" type="audio/mpeg">
-</audio>
+
 </body>
 </html>
