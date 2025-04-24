@@ -1,44 +1,40 @@
 # Jégtörő
 
 #### Statikus grafikus elemek
-- A játékterület (#gamearea) és a víz (.water).
-- A háttér.
-- A hajó képe (icebreaker.png) (bár mozgatható, de a kinézete nem változik).
+- A játékterület, víz.
+- Menü és a játék háttere.
 
 #### Dinamikus grafikus elemek (legalább 2db)
-- A jégtáblák (.ice) dinamikusan változnak, amikor a hajó rájuk lép.
-- A hajó pozíciója animációval változik a felhasználói input alapján.
+- Az időzítő pirosra vált, ha már csak 5 másodperc van hátra.
+- A hajó pozíciójának változása.
 
 #### Időzítés
+- 10 másodperces alap visszaszámláló.
 - Minden kitörött jég plusz időt ad a visszaszámlálóhoz a nehézségtől függően.
 
 #### Animáció
-- Hajó mozgása.
+- Súgó megjelenése.
 
 #### Hangeffektus
-- Jég eltörésekor "crack" hang.
+- Jég eltörésekor hangeffekt.
 
 #### Felhasználói interakció (legalább 2db)
-- Nyílbillentyűk használata a hajó mozgatásához (billentyűlenyomás esemény).
-- Egérrel történő nehézség választás.
+- Nyílbillentyűk használata a hajó mozgatásához.
+- Egérrel nehézség választás.
 
 #### Adatbeviteli lehetőség és tárolás a program futtatásai között
-- Helyi tárolás (localStorage) használata:
-  - Legjobb pontszám mentése
-  - Felhasználónév rögzítése
+- Legjobb pontszám mentése.
+- Legjobb pontszámhoz tartozó felhasználónév mentése.
 
 #### A bevitt adatok lekérdezése, megtekintési lehetőség a programból
-- Legjobb pontszám és utolsó játékosnév megjelenítése az oldalon vagy egy külön menüpontban.
+- Legjobb pontszám és a hozzá tartozó játékosnév megjelenítése az oldalon.
 
 #### Valamilyen konfigurációs beállítási lehetőség a programból vezérelve
 - Játék nehézségi szint beállítása:
-    - Könnyű: több jégtábla és több plusz idő
-    - Nehéz: kevesebb jégtábla és kevesebb plusz idő
+    - Könnyű: több jégtábla és több plusz idő.
+    - Nehéz: kevesebb jégtábla és kevesebb plusz idő.
 
 #### Súgó, tipp lehetőség
-- A ? ikonra vagy gombra kattintva megjelenő súgó:
-  - Játék célja
-  - Irányítás: nyílbillentyűk
-  - Visszaszámlálóhoz adott idő leírása
+- A súgóra kattintva megjelelenik a játék leírása.
 
 #### A készítő nevének és neptun kódjának elhelyezése könnyen megtalálható helyen
