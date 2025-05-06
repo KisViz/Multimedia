@@ -149,7 +149,7 @@ function endGame(won) {
         alert("Lejárt az idő!");
     }
 
-    window.location.href = "index.html"; //visszadob a kezdore
+    window.location.href = "../../index.html"; //visszadob a kezdore
 }
 
 //billentyu kezeles

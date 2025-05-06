@@ -14,6 +14,7 @@
 
 #### Animáció
 - Súgó megjelenése.
+- A gombok színe változik az egér rávitelével.
 
 #### Hangeffektus
 - Jég eltörésekor hangeffekt.
