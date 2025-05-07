@@ -32,7 +32,8 @@ h1 {
 }
 
 .start-btn,
-.help-btn {
+.help-btn,
+.reset-btn {
     padding: 16px 32px;
     font-size: 16px;
     margin: 16px 8px;
@@ -45,7 +46,8 @@ h1 {
 }
 
 .start-btn:hover,
-.help-btn:hover {
+.help-btn:hover,
+.reset-btn:hover{
     background-color: #023e8a;
 }
 
@@ -117,4 +119,15 @@ footer {
 
 .close-button:hover {
     color: #000;
+}
+
+#click-counter {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-weight: bold;
+    color: white;
+    background: #0000007F;
+    padding: 5px;
+    border-radius: 5px;
 }

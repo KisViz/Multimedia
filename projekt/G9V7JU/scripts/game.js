@@ -163,3 +163,16 @@ document.addEventListener('keydown', (e) => {
         case 'ArrowRight': moveShip(tileSize, 0); break;
     }
 });
+
+//localbol megprobaljuk betolteni a kattintasok szamat
+let clickCount = parseInt(localStorage.getItem("clickCount")) || 0;
+
+//frissitjuk a kijelzot
+document.getElementById("click-counter").textContent = `${clickCount} kattintás`;
+
+//ha kattintunk noveljuk a szamlolot es beallitjuk
+document.addEventListener("click", () => {
+    clickCount++;
+    localStorage.setItem("clickCount", clickCount);
+    document.getElementById("click-counter").textContent = `${clickCount} kattintás`;
+});

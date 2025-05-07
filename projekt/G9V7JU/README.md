@@ -21,14 +21,17 @@
 
 #### Felhasználói interakció (legalább 2db)
 - Nyílbillentyűk használata a hajó mozgatásához.
+- Kattintás számlálása a bal felső sarokban. 
 - Egérrel nehézség választás.
 
 #### Adatbeviteli lehetőség és tárolás a program futtatásai között
 - Legjobb pontszám mentése.
 - Legjobb pontszámhoz tartozó felhasználónév mentése.
+- Kattintások számának tárolása.
 
 #### A bevitt adatok lekérdezése, megtekintési lehetőség a programból
 - Legjobb pontszám és a hozzá tartozó játékosnév megjelenítése az oldalon.
+- Kattintások számának megjelenítése.
 
 #### Valamilyen konfigurációs beállítási lehetőség a programból vezérelve
 - Játék nehézségi szint beállítása:
