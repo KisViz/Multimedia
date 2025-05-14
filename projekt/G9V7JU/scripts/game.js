@@ -119,15 +119,22 @@ function breakIceAt(px, py) {
         //kikeressuk a jegest:(
         const selector = `.ice[data-x="${x}"][data-y="${y}"]`;
         const block = gameArea.querySelector(selector);
-        block.remove(); //es trorljuk
+
+        //animalva tutntetjuk el
+        $(block).fadeOut(200, function () {
+            block.remove(); //toroljuk
+
+            //csak akkor legyen vege, ha mar vege az animacionak
+            if (remainingIce <= 0) {
+                endGame(true);
+            }
+        });
+
 
         iceBreakSound.currentTime = 0; //a hang eljere tekerunk, ha tobb is lenne gyorsan, akkor ne legyen csunya
         iceBreakSound.play(); //lejatszuk a hangot
 
-        //ha elfogy a jeg nyertunk
-        if (remainingIce <= 0) {
-            endGame(true);
-        }
+
     }
 }
 
