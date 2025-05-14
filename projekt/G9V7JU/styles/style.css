@@ -120,14 +120,3 @@ footer {
 .close-button:hover {
     color: #000;
 }
-
-#click-counter {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    font-weight: bold;
-    color: white;
-    background: #0000007F;
-    padding: 5px;
-    border-radius: 5px;
-}

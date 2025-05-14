@@ -57,7 +57,7 @@ body {
     z-index: 0;
 }
 
-#click-counter {
+#step-counter {
     position: fixed;
     top: 10px;
     left: 10px;

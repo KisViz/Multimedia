@@ -40,26 +40,10 @@ function saveDifficulty() {
     localStorage.setItem("difficulty", difficulty); //lS-ben beallitja
 }
 
-//localbol megprobaljuk betolteni a kattintasok szamat
-let clickCount = parseInt(localStorage.getItem("clickCount")) || 0;
-
-//frissitjuk a kijelzot
-document.getElementById("click-counter").textContent = `${clickCount} kattintás`;
-
-//ha kattintunk noveljuk a szamlolot es beallitjuk
-document.addEventListener("click", () => {
-    clickCount++;
-    localStorage.setItem("clickCount", clickCount);
-    document.getElementById("click-counter").textContent = `${clickCount} kattintás`;
-});
-
 function clearLocalData() {
     localStorage.clear(); //ha torolni szeretnenk a mentett dolgokat
 
-    clickCount = 0; //lenullazzuk, hogy elolrol kezdje
-
     //kiirasok frissitese
-    document.getElementById("click-counter").textContent = "0 kattintás";
     document.getElementById("easy-best-time").textContent = "-";
     document.getElementById("easy-best-player").textContent = "-";
     document.getElementById("hard-best-time").textContent = "-";

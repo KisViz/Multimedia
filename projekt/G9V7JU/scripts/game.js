@@ -12,6 +12,7 @@ const difficulty = localStorage.getItem("difficulty"); //nehezseg lekerese
 const timerDisplay = document.getElementById('timer') //idozito
 const iceBreakSound = new Audio("../assets/audio/breaking.mp3"); //a toreshang
 iceBreakSound.load(); //elore betoltve, hogy ne kelljen varni
+let stepCount =  0; //lepes szamlalo
 
 //ha minden betoltott
 window.onload = function () {
@@ -135,7 +136,7 @@ function endGame(won) {
     clearInterval(countdown); //toroljuk a szamlalot
 
     if (won) { //ha nyert
-        alert("Gratulálok! Minden jeget feltörtél!");
+        alert("Gratulálok! Minden jeget feltörtél " + stepCount + " lépésből!");
 
         const bestKey = `bestTime_${difficulty}`; //elkeszitjuk a kulcsot
         const bestTime = parseInt(localStorage.getItem(bestKey) || "0"); //es lekerjuk az alapjan az idot
@@ -152,27 +153,35 @@ function endGame(won) {
     window.location.href = "../../index.html"; //visszadob a kezdore
 }
 
+//lepesek szamanak novelese
+function incrementStepCount() {
+    stepCount++;
+    document.getElementById("step-counter").textContent = `${stepCount} lépés`;
+}
+
+
 //billentyu kezeles
 document.addEventListener('keydown', (e) => {
     if (e.repeat) return; //hogy ne lehessen nyomva tartani és mindig nyomni kelljen a lepeshez
 
-    switch (e.key) {
-        case 'ArrowUp': moveShip(0, -tileSize); break;
-        case 'ArrowDown': moveShip(0, tileSize); break;
-        case 'ArrowLeft': moveShip(-tileSize, 0); break;
-        case 'ArrowRight': moveShip(tileSize, 0); break;
+    switch (e.key) { //mindigmozgatjuk a hajot a megfeleo iranyba es noveljuk a lepes szamot
+        case 'ArrowUp':
+            moveShip(0, -tileSize);
+            incrementStepCount();
+        break;
+        case 'ArrowDown':
+            moveShip(0, tileSize);
+            incrementStepCount();
+        break;
+
+        case 'ArrowLeft':
+            moveShip(-tileSize, 0);
+            incrementStepCount();
+        break;
+        case 'ArrowRight':
+            moveShip(tileSize, 0);
+            incrementStepCount();
+        break;
     }
 });
 
-//localbol megprobaljuk betolteni a kattintasok szamat
-let clickCount = parseInt(localStorage.getItem("clickCount")) || 0;
-
-//frissitjuk a kijelzot
-document.getElementById("click-counter").textContent = `${clickCount} kattintás`;
-
-//ha kattintunk noveljuk a szamlolot es beallitjuk
-document.addEventListener("click", () => {
-    clickCount++;
-    localStorage.setItem("clickCount", clickCount);
-    document.getElementById("click-counter").textContent = `${clickCount} kattintás`;
-});
