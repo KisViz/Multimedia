@@ -95,8 +95,14 @@ function moveShip(dx, dy) {
         //ha igen beallitjuk az uj ertekeket es a vizuakis stilust
         shipX = newX;
         shipY = newY;
-        ship.style.left = `${shipX}px`;
-        ship.style.top = `${shipY}px`;
+        //megallitjuk az elozo animaciot es atmozgatja a hajot
+        $("#ship").stop().animate({
+            left: shipX,
+            top: shipY
+        }, 50, () => {
+            breakIceAt(shipX, shipY); //es kitori a jeget
+        });
+
 
         //varakozas, hogy a mozgas megtortenjen
         setTimeout(() => {

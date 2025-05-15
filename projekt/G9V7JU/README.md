@@ -11,8 +11,11 @@
 #### Időzítés
 - 10 másodperces alap visszaszámláló.
 - Minden kitörött jég plusz időt ad a visszaszámlálóhoz a nehézségtől függően.
+- A speciális jég plusz 10 másodpercet ad a visszaszámlálóhoz.
 
 #### Animáció
+- Hajó mozgása.
+- Jég eltűnése.
 - Súgó megjelenése.
 - A gombok színe változik az egér rávitelével.
 
@@ -21,17 +24,16 @@
 
 #### Felhasználói interakció (legalább 2db)
 - Nyílbillentyűk használata a hajó mozgatásához.
-- Kattintás számlálása a bal felső sarokban. 
+- Lépések számlálása a bal felső sarokban és kiíratása a pálya megoldása után. 
 - Egérrel nehézség választás.
 
 #### Adatbeviteli lehetőség és tárolás a program futtatásai között
-- Legjobb pontszám mentése.
-- Legjobb pontszámhoz tartozó felhasználónév mentése.
-- Kattintások számának tárolása.
+- Legjobb idő mentése.
+- Legjobb időhöz tartozó felhasználónév mentése.
 
 #### A bevitt adatok lekérdezése, megtekintési lehetőség a programból
 - Legjobb pontszám és a hozzá tartozó játékosnév megjelenítése az oldalon.
-- Kattintások számának megjelenítése.
+- Léppések számának megjelenítése.
 
 #### Valamilyen konfigurációs beállítási lehetőség a programból vezérelve
 - Játék nehézségi szint beállítása:
@@ -42,3 +44,7 @@
 - A súgóra kattintva megjelelenik a játék leírása.
 
 #### A készítő nevének és neptun kódjának elhelyezése könnyen megtalálható helyen
+- A főmenü alján megtalálható.
+
+#### Opcionális: bónusz elemek
+- Speciális fehér jég, ami 10 másodpercet ad a visszaszámlálóhoz.
