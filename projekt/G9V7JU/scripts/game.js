@@ -44,12 +44,6 @@ function startCountdown() {
     }, 1000);
 }
 
-//ido hozzaadasa
-function addTime() {
-    timer += difficulty === "easy" ? 2 : 1; //attol fugg hogymenni, hogy milyen a nehezseg
-    updateTimerDisplay(); //es frissitjuk is
-}
-
 //legeneralja a jegkockakat
 function createIceBlocks(gridSize, difficulty) {
     const iceChance = difficulty === "easy" ? 0.2 : 0.1; //lekerjuk a nehezseget
@@ -72,6 +66,13 @@ function createIceBlocks(gridSize, difficulty) {
                 remainingIce++; //noveljuk a jegyek szamat
                 const ice = document.createElement("div"); //csinalunk egy jeget
                 ice.classList.add("ice"); //hozzaadjuk a jeg classkent (mint a div-ben a class="ice")
+
+                //specialis jeg meg 0.05 esellyel
+                const isSpecialIce = Math.random() < 0.05;
+                if (isSpecialIce) {
+                    ice.classList.add("special-ice"); //extra class
+                }
+
                 ice.dataset.x = x;  //attributumakent elmentjuk a koordinatajat (mint a div-ben a data-x=x)
                 ice.dataset.y = y;
                 ice.style.left = `${x * tileSize}px`; //beallitjuk, hogy jo helyen legyen
@@ -114,11 +115,20 @@ function breakIceAt(px, py) {
     if (iceGrid[y][x]) {
         iceGrid[y][x] = false; //ha van toroljuk
         remainingIce--; //kevesebb jeg lesz
-        addTime(); //es hozzaadjuk az idot
 
         //kikeressuk a jegest:(
         const selector = `.ice[data-x="${x}"][data-y="${y}"]`;
         const block = gameArea.querySelector(selector);
+
+        //ellenorizzuk, hogy specialis jeg volt e
+        const isSpecial = block.classList.contains("special-ice");
+        // Idő hozzáadása típus alapján
+        if (isSpecial) {
+            timer += 10;
+        } else {
+            timer += difficulty === "easy" ? 2 : 1; //attol fugg hogymenni, hogy milyen a nehezseg
+        }
+        updateTimerDisplay(); //es frissitjuk is
 
         //animalva tutntetjuk el
         $(block).fadeOut(200, function () {

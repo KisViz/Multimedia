@@ -49,6 +49,17 @@ body {
     box-sizing: border-box;
 }
 
+.special-ice {
+    position: absolute;
+    background-color: #ffffff;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #e9f2ff;
+    box-sizing: border-box;
+}
+
+
 .water {
     background-color: #003366;
     width: 100%;
