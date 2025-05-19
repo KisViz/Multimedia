@@ -128,7 +128,7 @@ function breakIceAt(px, py) {
 
         //ellenorizzuk, hogy specialis jeg volt e
         const isSpecial = block.classList.contains("special-ice");
-        // Idő hozzáadása típus alapján
+        //ido hozzaadasa tipus alapjan
         if (isSpecial) {
             timer += 10;
         } else {
